@@ -1,0 +1,4 @@
+System.IndexOutOfRangeException: Индекс находился вне границ массива.
+   в System.String.get_Chars(Int32 index)
+   в FileManager.Program.MainClass.copy.Fcopy(String a) в C:\Users\Сергей\source\repos\FileManager\FileManager\Program.cs:строка 182
+   в FileManager.Program.MainClass.Main(String[] args) в C:\Users\Сергей\source\repos\FileManager\FileManager\Program.cs:строка 4123.10.2021 22:18:23
