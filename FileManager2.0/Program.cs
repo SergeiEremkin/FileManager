@@ -9,15 +9,15 @@ namespace FileManager2._0
 {
     class Program
     {
-                          // Вывод директорий и файлов в консоль.
+        // Вывод директорий и файлов в консоль.
         public static void ShowDirsAndFiles()
         {
             Console.WriteLine("Введите путь: ");
             string path = Console.ReadLine();
-            var dir = Directory.GetDirectories(path); 
+            var dir = Directory.GetDirectories(path);
             var file = Directory.GetFiles(path);
-            
-            
+
+
             //int PageCount = dir.Length/Page; 
             Console.WriteLine($"{dir.Length}  {file.Length}");
 
@@ -30,25 +30,25 @@ namespace FileManager2._0
                 {
                     Console.WriteLine(dir[i]);
                 }
-                
-               
+
+
             }
-           
+
             if (Directory.Exists(path))
                 Console.WriteLine("------");
             {
-                    for (int j = 0; j <file.Length; j++)
-                    {
+                for (int j = 0; j < file.Length; j++)
+                {
 
-                        Console.WriteLine($" - {file[j]}");
+                    Console.WriteLine($" - {file[j]}");
 
-                    }
                 }
-               
+            }
+
 
         }
         // Функция копирования файла
-        
+
         public static void CopyFile()
         {
             {
@@ -76,17 +76,17 @@ namespace FileManager2._0
         // Инфо о директории
         public static void DirectoryInfo(string path)
         {
-            
+
             DirectoryInfo info = new DirectoryInfo(path);
             Console.WriteLine($"Путь: {info.FullName}");
             Console.WriteLine($"Диск: {info.Root}");
             Console.WriteLine($"Последнее взаимодействие: {info.LastAccessTime}");
             Console.WriteLine($"Дата создания: {info.CreationTime}");
             Console.WriteLine($"Атрибуты: {info.Attributes}");
-            
+
         }
-               //Инфо о файле
-        public static void FileInfo (string path)
+        //Инфо о файле
+        public static void FileInfo(string path)
         {
             FileInfo info = new FileInfo(path);
             Console.WriteLine($"Имя: {info.Name}");
@@ -103,15 +103,15 @@ namespace FileManager2._0
 
         static void Main(string[] args)
         {
-           
+
             Console.WriteLine("Добро пожаловать в программу FileManager!");
             Console.WriteLine();
             Console.WriteLine("Напечатайте 'help' чтобы узнать как пользоваться программой");
-           
+
             Console.WriteLine();
             var origWidth = Console.WindowWidth;
             var origHight = Console.WindowHeight;
-           
+
             while (true)
             {
 
@@ -137,16 +137,16 @@ namespace FileManager2._0
 
                             case "dir":
                                 Console.Clear();
-                                
+
                                 ShowDirsAndFiles();
-                                
-                                
+
+
                                 break;
 
                             case "copy":
                                 Console.SetCursorPosition(0, 29);
                                 CopyFile();
-                                    break;
+                                break;
 
                             case "delete":
                                 Console.SetCursorPosition(0, 29);
@@ -164,23 +164,25 @@ namespace FileManager2._0
                                 Console.WriteLine("Введите путь: ");
                                 FileInfo(Console.ReadLine());
                                 break;
-                             
+
                         }
                     }
-                    
+
 
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
                 }
-                
+
             }
+
+            //Добавили комментарий для теста
         }
 
     }
-}          
+}
 
-        
-    
+
+
 
